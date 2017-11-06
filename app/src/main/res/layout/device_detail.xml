@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/details_view"
+    android:visibility="invisible">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="#ffffff"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_margin="10dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/connect2" />
+            <Button
+                android:id="@+id/btn_disconnect"
+                android:layout_margin="10dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/disconnect2" />
+            <Button
+                android:id="@+id/btn_start_client"
+                android:layout_margin="10dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/camera_mode2"
+                android:visibility="gone" />
+        </LinearLayout>
+
+</FrameLayout>

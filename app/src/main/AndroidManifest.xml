@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.osko.angleshot"
+android:versionCode="1" android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="14" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name ="android.hardware.host"/>
+
+    <!-- Google Play filtering -->
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <application
+    android:icon="@mipmap/angle_shot"
+    android:label="@string/app_name"
+    android:theme="@android:style/Theme.Holo.Light">
+    <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:clearTaskOnLaunch="true">
+        <intent-filter>
+            <action
+                android:name="android.intent.action.MAIN" />
+            <category
+                android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+        <intent-filter>
+            <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"></action>
+        </intent-filter>
+
+        <meta-data
+            android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+            android:resource="@xml/device_filter" />
+    </activity>
+
+    <activity
+        android:name=".CameraPreview"
+        android:screenOrientation="landscape">
+    </activity>
+
+    <activity
+        android:name=".ViewActivity"
+        android:screenOrientation="landscape"
+        >
+    </activity>
+
+    <!-- Used for transferring files  after a successful connection -->
+        <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTED" />
+
+</application>
+</manifest>
